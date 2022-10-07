@@ -70,6 +70,10 @@ namespace Spiro
         {
             uint currentIndex = (e.MainIndex - 1) & (ByteDecomposer.DataArrSize - 1);
             double CurrentPressure = e.RealTimeValue;
+            if (Decomposer.RecordStarted)
+            {
+                labRecordSize.Text = "Record size : " + e.PacketCounter / Decomposer.SamplingFrequency;
+            }
         }
 
         private void timerRead_Tick(object sender, EventArgs e)
@@ -100,7 +104,6 @@ namespace Spiro
             {
                 labPort.Text = "Disconnected";
             }
-
         }
 
         private void timerPaint_Tick(object sender, EventArgs e)

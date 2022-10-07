@@ -37,6 +37,7 @@
             this.butStartRecord = new System.Windows.Forms.Button();
             this.butStopRecord = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.labRecordSize = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panelGraph
@@ -83,7 +84,7 @@
             // 
             // butStopRecord
             // 
-            this.butStopRecord.Location = new System.Drawing.Point(12, 58);
+            this.butStopRecord.Location = new System.Drawing.Point(12, 80);
             this.butStopRecord.Name = "butStopRecord";
             this.butStopRecord.Size = new System.Drawing.Size(75, 23);
             this.butStopRecord.TabIndex = 3;
@@ -96,11 +97,21 @@
             this.saveFileDialog1.DefaultExt = "txt";
             this.saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             // 
+            // labRecordSize
+            // 
+            this.labRecordSize.AutoSize = true;
+            this.labRecordSize.Location = new System.Drawing.Point(12, 50);
+            this.labRecordSize.Name = "labRecordSize";
+            this.labRecordSize.Size = new System.Drawing.Size(51, 13);
+            this.labRecordSize.TabIndex = 4;
+            this.labRecordSize.Text = "Record : ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
+            this.Controls.Add(this.labRecordSize);
             this.Controls.Add(this.butStopRecord);
             this.Controls.Add(this.butStartRecord);
             this.Controls.Add(this.labPort);
@@ -122,6 +133,7 @@
         private System.Windows.Forms.Button butStartRecord;
         private System.Windows.Forms.Button butStopRecord;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label labRecordSize;
     }
 }
 
