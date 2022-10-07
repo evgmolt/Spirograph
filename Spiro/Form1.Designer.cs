@@ -34,6 +34,9 @@
             this.labPort = new System.Windows.Forms.Label();
             this.timerStatus = new System.Windows.Forms.Timer(this.components);
             this.timerPaint = new System.Windows.Forms.Timer(this.components);
+            this.butStartRecord = new System.Windows.Forms.Button();
+            this.butStopRecord = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // panelGraph
@@ -68,11 +71,38 @@
             this.timerPaint.Enabled = true;
             this.timerPaint.Tick += new System.EventHandler(this.timerPaint_Tick);
             // 
+            // butStartRecord
+            // 
+            this.butStartRecord.Location = new System.Drawing.Point(12, 12);
+            this.butStartRecord.Name = "butStartRecord";
+            this.butStartRecord.Size = new System.Drawing.Size(75, 23);
+            this.butStartRecord.TabIndex = 2;
+            this.butStartRecord.Text = "Start record";
+            this.butStartRecord.UseVisualStyleBackColor = true;
+            this.butStartRecord.Click += new System.EventHandler(this.butStartRecord_Click);
+            // 
+            // butStopRecord
+            // 
+            this.butStopRecord.Location = new System.Drawing.Point(12, 58);
+            this.butStopRecord.Name = "butStopRecord";
+            this.butStopRecord.Size = new System.Drawing.Size(75, 23);
+            this.butStopRecord.TabIndex = 3;
+            this.butStopRecord.Text = "Stop record";
+            this.butStopRecord.UseVisualStyleBackColor = true;
+            this.butStopRecord.Click += new System.EventHandler(this.butStopRecord_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "txt";
+            this.saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
+            this.Controls.Add(this.butStopRecord);
+            this.Controls.Add(this.butStartRecord);
             this.Controls.Add(this.labPort);
             this.Controls.Add(this.panelGraph);
             this.Name = "Form1";
@@ -89,6 +119,9 @@
         private System.Windows.Forms.Label labPort;
         private System.Windows.Forms.Timer timerStatus;
         private System.Windows.Forms.Timer timerPaint;
+        private System.Windows.Forms.Button butStartRecord;
+        private System.Windows.Forms.Button butStopRecord;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

@@ -108,5 +108,21 @@ namespace Spiro
             BufPanel.Refresh();
 
         }
+
+        private void butStartRecord_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                TextWriter = new StreamWriter(saveFileDialog1.FileName);
+                Decomposer.RecordStarted = true;
+            }
+        }
+
+        private void butStopRecord_Click(object sender, EventArgs e)
+        {
+            TextWriter.Close();
+            TextWriter.Dispose();
+            Decomposer.RecordStarted = false;
+        }
     }
 }

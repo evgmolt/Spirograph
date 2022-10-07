@@ -68,7 +68,6 @@ namespace Spiro
                         }
 
 
-                        tmpValue -= ZeroLine;
                         //Очередь для выделения постоянной составляющей
                         Data.RealTimeArray[MainIndex] = tmpValue;
 
