@@ -74,7 +74,8 @@ namespace Spiro
             {
                 labRecordSize.Text = "Record size : " + e.PacketCounter / Decomposer.SamplingFrequency;
             }
-            label1.Text = e.PacketCounter.ToString();
+            labPacketCounter.Text = "Packets received : " + e.PacketCounter.ToString();
+            labValue.Text = "Value : " + e.RealTimeValue.ToString();
         }
 
         private void timerRead_Tick(object sender, EventArgs e)
