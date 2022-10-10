@@ -38,6 +38,7 @@
             this.butStopRecord = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.labRecordSize = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panelGraph
@@ -106,11 +107,21 @@
             this.labRecordSize.TabIndex = 4;
             this.labRecordSize.Text = "Record : ";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labRecordSize);
             this.Controls.Add(this.butStopRecord);
             this.Controls.Add(this.butStartRecord);
@@ -134,6 +145,7 @@
         private System.Windows.Forms.Button butStopRecord;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label labRecordSize;
+        private System.Windows.Forms.Label label1;
     }
 }
 

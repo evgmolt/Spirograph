@@ -61,7 +61,7 @@ namespace Spiro
                             tmpValue -= 0x10000;
                         }
 
-                        Data.RealTimeArray[MainIndex] = tmpValue;
+                        Data.RealTimeArray[MainIndex] = tmpValue - 950;
 
                         byteNum = 0;
 
