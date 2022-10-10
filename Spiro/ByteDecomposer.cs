@@ -15,8 +15,6 @@ namespace Spiro
             get { return _zeroLine; } 
             set { _zeroLine = value; }
         }
-        public abstract int StartSearchMaxLevel { get; } // Для алгоритма управления накачкой
-        public abstract int StopPumpingLevel { get; }    // Для алгоритма управления накачкой
         public abstract int SamplingFrequency { get; }
         public abstract int BaudRate { get; }
         public abstract int BytesInPacket { get; } // Размер посылки
@@ -34,17 +32,13 @@ namespace Spiro
         public bool RecordStarted;
         public bool DeviceTurnedOn;
 
-        public int tmpZero;
-
         protected int tmpValue;
 
         protected int noDataCounter;
 
         protected int byteNum;
 
-        protected int sizeQForZero = 10;
-
-        public ByteDecomposer(DataArrays data, int sizeQForDC, int sizeQForAC)
+        public ByteDecomposer(DataArrays data)
         {
             Data = data;
             RecordStarted = false;
