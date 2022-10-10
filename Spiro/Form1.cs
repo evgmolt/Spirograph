@@ -19,6 +19,7 @@ namespace Spiro
         StreamWriter TextWriter;
         CurvesPainter Painter;
         USBserialPort USBPort;
+        double ScaleY = 1;
 
         public event Action<Message> WindowsMessage;
         public Form1()
@@ -61,7 +62,6 @@ namespace Spiro
             ArrayList.Add(DataA.RealTimeArray);
             bool ViewMode = false;
             int ViewShift = 0;
-            int ScaleY = 1;
             int MaxValue = 200;
             Painter.Paint(ViewMode, ViewShift, ArrayList, null, ScaleY, MaxValue, e);
         }
@@ -127,6 +127,13 @@ namespace Spiro
             TextWriter.Close();
             TextWriter.Dispose();
             Decomposer.RecordStarted = false;
+        }
+
+        private void trackBarAmp_ValueChanged(object sender, EventArgs e)
+        {
+            double a = trackBarAmp.Value;
+            ScaleY = Math.Pow(2, a / 2);
+            BufPanel.Refresh();
         }
     }
 }
