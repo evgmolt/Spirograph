@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -8,18 +6,18 @@ namespace Spiro
 {
     internal class ByteDecomposer
     {
+        public const int SamplingFrequency = 250;
+        public const int BaudRate = 115200;
+        public const int BytesInPacket = 3;
+        public const int DataArrSize = 0x10000;
+
         private int _zeroLine;
 
-        public const int DataArrSize = 0x100000;
         public int ZeroLine 
         { 
             get { return _zeroLine; } 
             set { _zeroLine = value; }
         }
-        public const int SamplingFrequency = 250;
-        public const int BaudRate = 115200;
-        public const int BytesInPacket = 3;
-        public const int MaxNoDataCounter = 10;
 
         protected const byte marker1 = 0x19; 
 
@@ -31,11 +29,8 @@ namespace Spiro
         public int PacketCounter = 0;
 
         public bool RecordStarted;
-        public bool DeviceTurnedOn;
 
         protected int tmpValue;
-
-        protected int noDataCounter;
 
         protected int byteNum;
 
@@ -43,11 +38,9 @@ namespace Spiro
         {
             Data = data;
             RecordStarted = false;
-            DeviceTurnedOn = true;
             MainIndex = 0;
-            noDataCounter = 0;
             byteNum = 0;
-            _zeroLine = 18;
+            _zeroLine = 952;
         }
 
         protected virtual void OnDecomposeLineEvent()
@@ -73,14 +66,8 @@ namespace Spiro
             int bytes = usbport.BytesRead;
             if (bytes == 0)
             {
-                noDataCounter++;
-                if (noDataCounter > MaxNoDataCounter)
-                {
-                    DeviceTurnedOn = false;
-                }
                 return 0;
             }
-            DeviceTurnedOn = true;
             if (saveFileStream != null && RecordStarted)
             {
                 try
@@ -113,7 +100,7 @@ namespace Spiro
                             tmpValue -= 0x10000;
                         }
 
-                        Data.RealTimeArray[MainIndex] = tmpValue - 950;
+                        Data.RealTimeArray[MainIndex] = tmpValue - _zeroLine;
 
                         byteNum = 0;
 

@@ -14,7 +14,10 @@ namespace Spiro
 
     public class USBserialPort: IMessageHandler
     {
-        private const int _USBTimerInterval = 25;
+        //В Компьютер\HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\SERIALCOMM есть список портов
+        //Выбрать подстроку для текущего устройства
+        private const string _connectString = "USBSER"; //Для GD303
+        private const int _USBTimerInterval = 100;
         public SerialPort PortHandle;
         public string[] PortNames;
         public byte[] PortBuf;
@@ -25,7 +28,6 @@ namespace Spiro
 
         private readonly int _portBufSize = 10000;
         private readonly int _baudRate;
-        private readonly string _connectString;
 
         public event Action<Exception> ConnectionFailure;
         public event Action ConnectionOk;
@@ -35,7 +37,6 @@ namespace Spiro
         public USBserialPort(IMessageHandler messageHandler, int baudrate)
         {
             _baudRate = baudrate;
-            _connectString = "USBSER";
             messageHandler.WindowsMessage += OnMessage;
             ReadEnabled = false;
             PortBuf = new byte[_portBufSize];
@@ -62,6 +63,7 @@ namespace Spiro
                     }
                     catch (Exception)
                     {
+                        throw new Exception("Error reading port");
                     }
                 }
             }

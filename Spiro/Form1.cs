@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Spiro
@@ -37,7 +31,6 @@ namespace Spiro
 //            USBPort.ConnectionOk += OnConnectionOk;
             USBPort.Connect();
         }
-
 
         protected override void WndProc(ref Message m)
         {
