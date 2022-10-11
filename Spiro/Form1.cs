@@ -30,10 +30,10 @@ namespace Spiro
             BufPanel.Dock = DockStyle.Fill;
             BufPanel.Paint += bufferedPanel_Paint;
             DataA = new DataArrays(ByteDecomposer.DataArrSize);
-            Decomposer = new ByteDecomposerADS1115(DataA);
+            Decomposer = new ByteDecomposer(DataA);
             Decomposer.OnDecomposePacketEvent += OnPacketReceived;
             Painter = new CurvesPainter(BufPanel, Decomposer);
-            USBPort = new USBserialPort(this, Decomposer.BaudRate);
+            USBPort = new USBserialPort(this, ByteDecomposer.BaudRate);
 //            USBPort.ConnectionOk += OnConnectionOk;
             USBPort.Connect();
         }
@@ -72,7 +72,7 @@ namespace Spiro
             double CurrentPressure = e.RealTimeValue;
             if (Decomposer.RecordStarted)
             {
-                labRecordSize.Text = "Record size : " + e.PacketCounter / Decomposer.SamplingFrequency;
+                labRecordSize.Text = "Record size : " + e.PacketCounter / ByteDecomposer.SamplingFrequency;
             }
             labPacketCounter.Text = "Packets received : " + e.PacketCounter.ToString();
             labValue.Text = "Value : " + e.RealTimeValue.ToString();

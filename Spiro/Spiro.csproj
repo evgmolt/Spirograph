@@ -50,7 +50,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ByteDecomposer.cs" />
-    <Compile Include="ByteDecomposerADS1115.cs" />
     <Compile Include="CurvesPainter.cs" />
     <Compile Include="DataArrays.cs" />
     <Compile Include="Form1.cs">

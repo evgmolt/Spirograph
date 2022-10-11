@@ -89,13 +89,13 @@ namespace Spiro
                 }
                 int index = 1;
                 int timeTickSize = 10;
-                while (index * _decomposer.SamplingFrequency < _control.Width)
+                while (index * ByteDecomposer.SamplingFrequency < _control.Width)
                 {
                     e.Graphics.DrawLine(
                         pen0,
-                        index * _decomposer.SamplingFrequency,
+                        index * ByteDecomposer.SamplingFrequency,
                         _control.Height,
-                        index * _decomposer.SamplingFrequency,
+                        index * ByteDecomposer.SamplingFrequency,
                         _control.Height - timeTickSize);
                     index++;
                 }
