@@ -43,8 +43,8 @@
             this.labValue = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAmp)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,7 +56,7 @@
             this.panelGraph.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGraph.Location = new System.Drawing.Point(235, 3);
             this.panelGraph.Name = "panelGraph";
-            this.panelGraph.Size = new System.Drawing.Size(635, 351);
+            this.panelGraph.Size = new System.Drawing.Size(634, 351);
             this.panelGraph.TabIndex = 0;
             // 
             // timerRead
@@ -130,11 +130,11 @@
             // trackBarAmp
             // 
             this.trackBarAmp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackBarAmp.Location = new System.Drawing.Point(876, 3);
+            this.trackBarAmp.Location = new System.Drawing.Point(875, 3);
             this.trackBarAmp.Minimum = -10;
             this.trackBarAmp.Name = "trackBarAmp";
             this.trackBarAmp.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarAmp.Size = new System.Drawing.Size(39, 351);
+            this.trackBarAmp.Size = new System.Drawing.Size(40, 351);
             this.trackBarAmp.TabIndex = 1;
             this.trackBarAmp.ValueChanged += new System.EventHandler(this.trackBarAmp_ValueChanged);
             // 
@@ -152,7 +152,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.60819F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.39182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.Controls.Add(this.panelGraph, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.trackBarAmp, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -181,6 +181,15 @@
             this.panel1.Size = new System.Drawing.Size(226, 351);
             this.panel1.TabIndex = 2;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(16, 81);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(189, 14);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 8;
+            this.progressBar1.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -190,15 +199,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(226, 39);
             this.panel2.TabIndex = 3;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(16, 81);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(189, 14);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 8;
-            this.progressBar1.Visible = false;
             // 
             // Form1
             // 

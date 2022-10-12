@@ -32,6 +32,7 @@ namespace Spiro
             USBPort.Connect();
         }
 
+        //Обработка подключения / отключения USB устройств
         protected override void WndProc(ref Message m)
         {
             const int WM_DEVICECHANGE = 0x0219;

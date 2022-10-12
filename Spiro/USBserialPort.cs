@@ -7,15 +7,10 @@ using System.Windows.Forms;
 
 namespace Spiro
 {
-    public interface IMessageHandler
-    {
-        event Action<Message> WindowsMessage;
-    }
-
     public class USBserialPort: IMessageHandler
     {
         //В Компьютер\HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\SERIALCOMM есть список портов
-        //Выбрать подстроку для текущего устройства
+        //Выбрать подстроку для нужного устройства
         private const string _connectString = "USBSER"; //Для GD303
         private const int _USBTimerInterval = 100;
         public SerialPort PortHandle;
