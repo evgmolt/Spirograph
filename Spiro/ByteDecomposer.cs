@@ -40,7 +40,7 @@ namespace Spiro
             RecordStarted = false;
             MainIndex = 0;
             byteNum = 0;
-            _zeroLine = 952;
+//            _zeroLine = 952;
         }
 
         protected virtual void OnDecomposeLineEvent()
