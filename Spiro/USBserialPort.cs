@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Spiro
 {
-    public class USBserialPort: IMessageHandler
+    public class USBserialPort
     {
         //В Компьютер\HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\SERIALCOMM есть список портов
         //Выбрать подстроку для нужного устройства
