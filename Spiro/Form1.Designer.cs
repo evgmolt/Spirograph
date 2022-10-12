@@ -44,6 +44,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAmp)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,7 +56,7 @@
             this.panelGraph.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGraph.Location = new System.Drawing.Point(235, 3);
             this.panelGraph.Name = "panelGraph";
-            this.panelGraph.Size = new System.Drawing.Size(636, 351);
+            this.panelGraph.Size = new System.Drawing.Size(635, 351);
             this.panelGraph.TabIndex = 0;
             // 
             // timerRead
@@ -95,7 +96,7 @@
             // 
             // butStopRecord
             // 
-            this.butStopRecord.Location = new System.Drawing.Point(16, 82);
+            this.butStopRecord.Location = new System.Drawing.Point(16, 117);
             this.butStopRecord.Name = "butStopRecord";
             this.butStopRecord.Size = new System.Drawing.Size(75, 23);
             this.butStopRecord.TabIndex = 3;
@@ -113,14 +114,14 @@
             this.labRecordSize.AutoSize = true;
             this.labRecordSize.Location = new System.Drawing.Point(13, 54);
             this.labRecordSize.Name = "labRecordSize";
-            this.labRecordSize.Size = new System.Drawing.Size(51, 13);
+            this.labRecordSize.Size = new System.Drawing.Size(72, 13);
             this.labRecordSize.TabIndex = 4;
-            this.labRecordSize.Text = "Record : ";
+            this.labRecordSize.Text = "Record size : ";
             // 
             // labPacketCounter
             // 
             this.labPacketCounter.AutoSize = true;
-            this.labPacketCounter.Location = new System.Drawing.Point(13, 121);
+            this.labPacketCounter.Location = new System.Drawing.Point(13, 156);
             this.labPacketCounter.Name = "labPacketCounter";
             this.labPacketCounter.Size = new System.Drawing.Size(78, 13);
             this.labPacketCounter.TabIndex = 5;
@@ -129,18 +130,18 @@
             // trackBarAmp
             // 
             this.trackBarAmp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackBarAmp.Location = new System.Drawing.Point(877, 3);
+            this.trackBarAmp.Location = new System.Drawing.Point(876, 3);
             this.trackBarAmp.Minimum = -10;
             this.trackBarAmp.Name = "trackBarAmp";
             this.trackBarAmp.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarAmp.Size = new System.Drawing.Size(38, 351);
+            this.trackBarAmp.Size = new System.Drawing.Size(39, 351);
             this.trackBarAmp.TabIndex = 1;
             this.trackBarAmp.ValueChanged += new System.EventHandler(this.trackBarAmp_ValueChanged);
             // 
             // labValue
             // 
             this.labValue.AutoSize = true;
-            this.labValue.Location = new System.Drawing.Point(13, 149);
+            this.labValue.Location = new System.Drawing.Point(13, 184);
             this.labValue.Name = "labValue";
             this.labValue.Size = new System.Drawing.Size(34, 13);
             this.labValue.TabIndex = 7;
@@ -151,7 +152,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.60819F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.39182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel1.Controls.Add(this.panelGraph, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.trackBarAmp, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -168,6 +169,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.butStartRecord);
             this.panel1.Controls.Add(this.labValue);
             this.panel1.Controls.Add(this.butStopRecord);
@@ -188,6 +190,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(226, 39);
             this.panel2.TabIndex = 3;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(16, 81);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(189, 14);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 8;
+            this.progressBar1.Visible = false;
             // 
             // Form1
             // 
@@ -225,6 +236,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

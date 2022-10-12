@@ -11,7 +11,7 @@ namespace Spiro
         public const int BytesInPacket = 3;
         public const int DataArrSize = 0x10000;
 
-        private int _zeroLine;
+        private int _zeroLine = 0;
 
         public int ZeroLine 
         { 

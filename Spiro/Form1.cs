@@ -81,6 +81,9 @@ namespace Spiro
 
         private void timerStatus_Tick(object sender, EventArgs e)
         {
+            butStartRecord.Enabled = !Decomposer.RecordStarted;
+            butStopRecord.Enabled = Decomposer.RecordStarted;
+            progressBar1.Visible = Decomposer.RecordStarted;
             if (USBPort == null)
             {
                 labPort.Text = "Disconnected";
@@ -104,7 +107,6 @@ namespace Spiro
         private void timerPaint_Tick(object sender, EventArgs e)
         {
             BufPanel.Refresh();
-
         }
 
         private void butStartRecord_Click(object sender, EventArgs e)
@@ -113,6 +115,7 @@ namespace Spiro
             {
                 TextWriter = new StreamWriter(saveFileDialog1.FileName);
                 Decomposer.RecordStarted = true;
+                Decomposer.PacketCounter = 0;
             }
         }
 
