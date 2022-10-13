@@ -36,12 +36,9 @@ namespace Spiro
         protected override void WndProc(ref Message m)
         {
             const int WM_DEVICECHANGE = 0x0219;
-            if (WindowsMessage != null)
+            if (m.Msg == WM_DEVICECHANGE)
             {
-                if (m.Msg == WM_DEVICECHANGE)
-                {
-                    WindowsMessage(m);
-                }
+                WindowsMessage?.Invoke(m);
             }
             base.WndProc(ref m);
         }
